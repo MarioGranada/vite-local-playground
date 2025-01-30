@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -82,6 +83,51 @@ function App() {
               >
                 Scroll to Right
               </Button>
+            </>
+          )}
+        </Carousel>
+
+        <Carousel scrollTo={1} className="w-full sm:max-w-auto">
+          {({
+            scrollLeftToStep,
+            scrollRightToStep,
+            canScrollLeft,
+            canScrollRight,
+          }: RenderProps) => (
+            <>
+              <div className="flex justify-between w-full items-center">
+                <Button
+                  className="border border-white w-[110px] h-[50px] rounded-full px-6 py-3 static"
+                  onClick={scrollLeftToStep}
+                  disabled={!canScrollLeft}
+                  data-testid="scroll-left"
+                >
+                  <IconV2 name="chevron-left" />
+                </Button>
+                <Button
+                  className="border border-white w-[110px] h-[50px] rounded-full px-6 py-3 static"
+                  onClick={scrollRightToStep}
+                  disabled={!canScrollRight}
+                  data-testid="scroll-right"
+                >
+                  <IconV2 name="chevron-right" />
+                </Button>
+              </div>
+
+              <Carousel.Reel>
+                {items?.map((_item: any, index) => (
+                  <Carousel.Item
+                    key={index}
+                    // className="m-4 flex flex-col items-center text-center p-4 bg-white rounded-2xl"
+                    className="w-full max-w-80 h-48 border border-beerus"
+                    data-testid={`supplier-${index}`}
+                  >
+                    <h5 className="mt-4 text-lg text-[#191546] not-italic font-bold leading-[19.2px]">
+                      {index}
+                    </h5>
+                  </Carousel.Item>
+                ))}
+              </Carousel.Reel>
             </>
           )}
         </Carousel>
