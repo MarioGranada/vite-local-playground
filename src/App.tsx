@@ -20,7 +20,7 @@ function App() {
       <h1>Vite + React</h1>
       <p style={{ color: "white" }}>
         Icon here
-        <Icon name="" className="this is a test" />
+        <Icon name="airplane-take-off" className="this is a test" />
       </p>
 
       <div className="card">
