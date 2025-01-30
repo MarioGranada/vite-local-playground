@@ -118,11 +118,11 @@ function App() {
                 {items?.map((_item: any, index) => (
                   <Carousel.Item
                     key={index}
-                    // className="m-4 flex flex-col items-center text-center p-4 bg-white rounded-2xl"
-                    className="w-full max-w-80 h-48 border border-beerus"
+                    className="m-4 flex flex-col items-center text-center p-4 bg-white rounded-2xl"
+                    // className="w-full max-w-80 h-48 border border-beerus"
                     data-testid={`supplier-${index}`}
                   >
-                    <h5 className="mt-4 text-lg text-[#191546] not-italic font-bold leading-[19.2px]">
+                    <h5 className="mt-4 text-lg text-[#191546] not-italic font-bold leading-[19.2px] tracking-[0.32px]">
                       {index}
                     </h5>
                   </Carousel.Item>
